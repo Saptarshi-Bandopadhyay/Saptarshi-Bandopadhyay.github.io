@@ -24,9 +24,9 @@ function moveDot(dot) {
     const startX = parseFloat(dot.style.left);
     const startY = parseFloat(dot.style.top);
 
-    const amplitudeX = Math.random() * 5 + 10; // Amplitude of movement in X direction
-    const amplitudeY = Math.random() * 5 + 10; // Amplitude of movement in Y direction
-    const frequency = Math.random() * 0.0005 + 0.001; // Frequency of movement
+    const amplitudeX = Math.random() * 10 + 10; // Amplitude of movement in X direction
+    const amplitudeY = Math.random() * 10+ 10; // Amplitude of movement in Y direction
+    const frequency = Math.random() * 0.0002 + 0.0002; // Frequency of movement
 
     let startTime = null;
 
