@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <title>Saptarshi</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
@@ -16,11 +16,43 @@
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/blogs.html">Blog</a></li>
                 <li><a href="/projects.html" , class="active">Projects</a></li>
-                <li><a href="/socials.html">Socials</a></li>
+                <li><a href="/random.html">Random</a></li>
             </ul>
         </nav>
     </header>
-    <script src="script.js"></script>
+    <main style="margin-top: 30vh; overflow-y: auto;">
+        <section id="home">
+            <div class="content">
+                <section class="project" id="project1">
+                    <h3>SnapScript: Image Captioning System</h3>
+                    <p>Image Captioning system capable of generating caption for single images</p>
+                    <span><a href="https://github.com/Saptarshi-Bandopadhyay/Image_Captioning_Using_Transformers"
+                            class="project-link">Github</a></span>
+                    <span><a href="https://huggingface.co/spaces/Saptarshi003/Image_Captioning_Using_Transformer"
+                            class="project-link">LiveDemo</a></span>
+                </section>
+
+                <section class="project" id="project2">
+                    <h3>CrossTalk: English-to-Spanish Neural Translation</h3>
+                    <p>English to Spanish Neural Machine Translation system, enabling the translation of English
+                        sentences into Spanish</p>
+                    <span><a href="https://github.com/Saptarshi-Bandopadhyay/Neural_Machine_Translation"
+                            class="project-link">Github</a></span>
+                    <span><a href="https://huggingface.co/spaces/Saptarshi003/Neural_Machine_Translation"
+                            class="project-link">LiveDemo</a></span>
+                </section>
+
+                <section class="project" id="project3">
+                    <h3>UnoViz: One-Shot Face Recognition System</h3>
+                    <p>Face recognition system capable of utilizing a single image of any individual as
+                        a reference point for subsequent face recognition through one-shot learning</p>
+                    <span><a href="https://github.com/Saptarshi-Bandopadhyay/Face-Recognition-Using-SiameseNetwork_TripletLoss"
+                            class="project-link">Github</a></span>
+                </section>
+            </div>
+        </section>
+    </main>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 
-
+// --------------------------- Backgroud dots animation -----------------------------
 function createDots() {
     const numDots = 150; // Number of dots
     const container = document.body;
@@ -49,7 +49,7 @@ function moveDot(dot) {
 createDots(); // Call createDots function to start the animation
 
 
-//------------------------------------------
+//--------------------- Name animation ---------------------
 
 const letters = "Sabcdefghijklmnopqrstuvwxyz";
 
@@ -79,3 +79,6 @@ document.querySelector("h1").onmouseover = event => {
     iteration += 1 / 3;
   }, 40);
 }
+
+
+

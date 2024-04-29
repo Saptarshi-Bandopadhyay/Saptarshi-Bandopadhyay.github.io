@@ -50,6 +50,13 @@ nav ul li a.active {
     color: rgba(255, 255, 255, 0.861);
 }
 
+/* nav ul.social-links {
+    justify-content: end;
+} */
+
+
+    
+
 main {
     position: absolute;
     top: 50%;
@@ -60,6 +67,24 @@ main {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    max-height: 80vh; /* Set maximum height for main content area */
+    
+}
+
+p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.568);
+}
+
+span a{
+    font-size: 90%;
+    color: rgba(176, 168, 214, 0.815);
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+span a:hover{
+    color: rgba(255, 255, 255, 0.861);
 }
 
 .content {
@@ -71,11 +96,9 @@ main {
 h1 {
     font-size: 60px;
     max-width: 18vw;
+    margin-bottom: 20px;
 }
 
-p {
-    font-size: 18px;
-}
 
 /* Floating dots animation */
 /* Update the dot size */
@@ -87,5 +110,22 @@ p {
     border-radius: 50%;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
 
 
+/* ------------------------------------ Project page ------------------------- */
+
+.project {
+    border: 2px solid #333;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+/* .project:hover {
+    background-color: #f0f0f0; /* Change background color on hover
+} */
