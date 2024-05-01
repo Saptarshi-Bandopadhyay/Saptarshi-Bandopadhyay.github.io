@@ -157,44 +157,36 @@ footer p{
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-.project p{
-
-}
-
 .project-main { 
     overflow-y: auto;
     transform: translate(25vw, 16vh);
 }
 
-
-@media screen and (max-width: 950px) {
-    main{
-        width: 80%;
-        transform: translate(10vw, 20vh);
-    }
-
+@media screen and (max-width: 1050px) {
     .project-main{
+        width: 80%;
         transform: translate(10vw, 16vh);
     }
 }
 
-/* Adjustments for smaller screen sizes */
+@media screen and (max-width: 1050px) {
+    main{
+        width: 80%;
+        transform: translate(10vw, 20vh);
+    }
+}
+
 @media screen and (max-width: 768px) {
     nav ul li {
-        margin: 0px 0px; /* Decrease horizontal margin for menu items */
+        margin: 0px 0px;
     }
     nav ul li a{
         padding: 3vw;
     }
     h1 {
-        font-size: 40px; /* Decrease font size for smaller screens */
-        max-width: 80%; /* Allow the heading to take full width */
+        font-size: 40px; 
+        max-width: 80%;
     }
-    footer {
-        position: fixed; /* Change position to relative for smaller screens */
-    }
-    .social-links li {
-        margin-right: 15px; /* Decrease spacing between social links */
-    }
+
 }
 
