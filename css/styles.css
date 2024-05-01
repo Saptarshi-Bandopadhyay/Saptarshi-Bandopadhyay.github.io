@@ -51,7 +51,7 @@ nav ul li a.active {
 
 main {
     position: fixed;
-    transform: translate(27vw, 20vh);
+    transform: translate(25vw, 20vh);
     text-align: left;
     width: 50%; /*Adjust the width as needed*/
     display: flex;
@@ -62,7 +62,6 @@ main {
 }
 
 p {
-    font-size: 18px;
     color: rgba(255, 255, 255, 0.568);
 }
 
@@ -158,9 +157,13 @@ footer p{
     background-color: rgba(255, 255, 255, 0.05);
 }
 
+.project p{
+
+}
+
 .project-main { 
     overflow-y: auto;
-    transform: translate(27vw, 16vh);
+    transform: translate(25vw, 16vh);
 }
 
 
