@@ -163,16 +163,13 @@ footer p{
 }
 
 @media screen and (max-width: 1050px) {
-    .project-main{
-        width: 80%;
-        transform: translate(10vw, 16vh);
-    }
-}
-
-@media screen and (max-width: 1050px) {
     main{
         width: 80%;
         transform: translate(10vw, 20vh);
+    }
+    .project-main{
+        width: 80%;
+        transform: translate(10vw, 16vh);
     }
 }
 
