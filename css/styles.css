@@ -53,7 +53,7 @@ main {
     position: fixed;
     transform: translate(27vw, 20vh);
     text-align: left;
-    width: 60%; /*Adjust the width as needed*/
+    width: 50%; /*Adjust the width as needed*/
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
