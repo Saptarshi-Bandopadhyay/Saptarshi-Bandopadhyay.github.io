@@ -2,14 +2,15 @@
 // --------------------------- Backgroud dots animation -----------------------------
 function createDots() {
     const numDots = 150; // Number of dots
-    const container = document.body;
+    const container = document.getElementById('dots-container');
+    const containerRect = container.getBoundingClientRect();
     const dots = [];
 
     for (let i = 0; i < numDots; i++) {
         const dot = document.createElement('div');
         dot.classList.add('dot');
-        dot.style.left = `${Math.random() * window.innerWidth}px`;
-        dot.style.top = `${Math.random() * window.innerHeight}px`;
+        dot.style.left = `${Math.random() * containerRect.width}px`; // Position relative to container's width
+        dot.style.top = `${Math.random() * containerRect.height}px`;
         dot.style.opacity = Math.random() //* 1.5 + 0.5; // Random opacity between 0.5 and 1
         container.appendChild(dot);
         dots.push(dot);
