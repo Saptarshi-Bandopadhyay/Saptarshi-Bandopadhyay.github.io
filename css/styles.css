@@ -4,6 +4,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: black;
     overflow: hidden;
+    padding-bottom: 1vh;
 }
 
 header {
@@ -57,7 +58,7 @@ main {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    max-height: 73vh; /* Set maximum height for main content area */
+    max-height: 70vh; /* Set maximum height for main content area */
     
 }
 
