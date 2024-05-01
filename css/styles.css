@@ -9,8 +9,7 @@ body {
 header {
     text-align: center;
     position: fixed;
-    top: 40px;
-    left: 0;
+    top: 5vh;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.1);
     display: flex;
@@ -52,15 +51,13 @@ nav ul li a.active {
 
 main {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-45%, -70%);
+    transform: translate(27vw, 20vh);
     text-align: left;
-    width: 50%; /* Adjust the width as needed */
+    width: 40%; /*Adjust the width as needed*/
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    max-height: 80vh; /* Set maximum height for main content area */
+    max-height: 73vh; /* Set maximum height for main content area */
     
 }
 
@@ -97,7 +94,7 @@ footer {
     width: 100%;
     padding: 5px;
     text-align: center; /* Center the content horizontally */
-    background-color: rgba(0, 0, 0, 0.1); /* Adjust the background color */
+    background-color: rgba(0, 0, 0, 0.0); /* Adjust the background color */
 }
 
 .social-links {
@@ -111,13 +108,8 @@ footer {
     margin-right: 20px; /* Add spacing between social links */
 }
 
-.social-links li:last-child {
-    margin-right: 0; /* Remove right margin for the last social link */
-}
-
 .social-links a {
     text-decoration: none;
-    color: #333; /* Set the color of the social links */
 }
 
 .social-links a img{
@@ -165,3 +157,41 @@ footer p{
     margin-bottom: 20px;
     background-color: rgba(255, 255, 255, 0.05);
 }
+
+.project-main { 
+    overflow-y: auto;
+    transform: translate(27vw, 16vh);
+}
+
+
+@media screen and (max-width: 950px) {
+    main{
+        width: 80%;
+        transform: translate(10vw, 20vh);
+    }
+
+    .project-main{
+        transform: translate(10vw, 16vh);
+    }
+}
+
+/* Adjustments for smaller screen sizes */
+@media screen and (max-width: 768px) {
+    nav ul li {
+        margin: 0px 0px; /* Decrease horizontal margin for menu items */
+    }
+    nav ul li a{
+        padding: 3vw;
+    }
+    h1 {
+        font-size: 40px; /* Decrease font size for smaller screens */
+        max-width: 80%; /* Allow the heading to take full width */
+    }
+    footer {
+        position: fixed; /* Change position to relative for smaller screens */
+    }
+    .social-links li {
+        margin-right: 15px; /* Decrease spacing between social links */
+    }
+}
+
