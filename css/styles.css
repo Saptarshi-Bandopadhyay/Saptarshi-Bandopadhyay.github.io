@@ -197,3 +197,17 @@ footer p{
 
 }
 
+/* ------------------------------------ Experience page ------------------------- */
+
+.experience {
+    border: 2px solid #333;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.experience-main { 
+    overflow-y: auto;
+    transform: translate(25vw, 16vh);
+}
