@@ -172,12 +172,32 @@ footer p{
     transform: translate(25vw, 16vh);
 }
 
+/* ------------------------------------ Experience page ------------------------- */
+
+.experience {
+    border: 2px solid #333;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.experience-main { 
+    overflow-y: auto;
+    transform: translate(25vw, 16vh);
+}
+
 @media screen and (max-width: 1050px) {
     main{
         width: 80%;
         transform: translate(10vw, 20vh);
     }
     .project-main{
+        width: 80%;
+        transform: translate(10vw, 15vh);
+    }
+
+    .experience-main{
         width: 80%;
         transform: translate(10vw, 15vh);
     }
@@ -195,19 +215,4 @@ footer p{
         max-width: 80%;
     }
 
-}
-
-/* ------------------------------------ Experience page ------------------------- */
-
-.experience {
-    border: 2px solid #333;
-    border-radius: 15px;
-    padding: 25px;
-    margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
-.experience-main { 
-    overflow-y: auto;
-    transform: translate(25vw, 16vh);
 }
