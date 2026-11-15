@@ -23,12 +23,12 @@ export function FutureTechBlueprints() {
         style={{
           position: 'absolute',
           top: '-25px',
-          right: '-45px',
-          width: '660px',
-          maxWidth: '52vw',
+          right: '-40px',
+          width: '600px',
+          maxWidth: '46vw',
           opacity: 0.23,
           filter: 'contrast(1.18) brightness(0.95)',
-          transform: 'rotate(5deg)',
+          transform: 'rotate(4deg)',
           border: '2px solid var(--pencil-blue)',
           boxShadow: '0 8px 32px rgba(24, 82, 140, 0.16)',
           background: 'rgba(24, 82, 140, 0.05)',
@@ -62,15 +62,16 @@ export function FutureTechBlueprints() {
       </div>
 
       {/* =====================================================================
-          2. MIDDLE-LEFT: MK-VIII HEAVY POWERED EXOSUIT & COMBAT MECH ARMOR
+          2. BOTTOM-LEFT: MK-VIII HEAVY POWERED EXOSUIT & COMBAT MECH ARMOR
+          (Fixed to bottom-left to prevent any overlap with top-left schematic)
           ===================================================================== */}
       <div
         style={{
           position: 'absolute',
-          top: '36%',
-          left: '-55px',
-          width: '620px',
-          maxWidth: '48vw',
+          bottom: '-35px',
+          left: '-40px',
+          width: '560px',
+          maxWidth: '44vw',
           opacity: 0.21,
           filter: 'contrast(1.18) brightness(0.95)',
           transform: 'rotate(-4deg)',
@@ -113,12 +114,12 @@ export function FutureTechBlueprints() {
         style={{
           position: 'absolute',
           bottom: '-35px',
-          right: '-35px',
-          width: '700px',
-          maxWidth: '54vw',
+          right: '-40px',
+          width: '620px',
+          maxWidth: '48vw',
           opacity: 0.23,
           filter: 'contrast(1.18) brightness(0.95)',
-          transform: 'rotate(-6deg)',
+          transform: 'rotate(-4deg)',
           border: '2px solid var(--pencil-blue)',
           boxShadow: '0 8px 32px rgba(24, 82, 140, 0.16)',
           background: 'rgba(24, 82, 140, 0.05)',
@@ -152,18 +153,19 @@ export function FutureTechBlueprints() {
       </div>
 
       {/* =====================================================================
-          4. TOP-LEFT: DEXTEROUS BIONIC HAND & SENSORY MANIPULATOR (SUBTLE ACCENT)
+          4. TOP-LEFT: DEXTEROUS BIONIC HAND & SENSORY MANIPULATOR
+          (Anchored strictly to top-left corner, isolated from bottom-left)
           ===================================================================== */}
       <div
         style={{
           position: 'absolute',
-          top: '50px',
-          left: '-45px',
-          width: '440px',
-          maxWidth: '38vw',
-          opacity: 0.17,
+          top: '-25px',
+          left: '-35px',
+          width: '480px',
+          maxWidth: '40vw',
+          opacity: 0.18,
           filter: 'contrast(1.15) brightness(0.95)',
-          transform: 'rotate(7deg)',
+          transform: 'rotate(3deg)',
           border: '1.5px solid var(--pencil-blue)',
           boxShadow: '0 6px 24px rgba(24, 82, 140, 0.12)',
           background: 'rgba(24, 82, 140, 0.04)',
