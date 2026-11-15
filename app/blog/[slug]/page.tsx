@@ -21,10 +21,10 @@ export default async function BlogPostPage({
 
   return (
     <div className="page-container narrow">
-      {/* Return to Memos Archive */}
+      {/* Return Breadcrumb */}
       <div style={{ marginBottom: '24px' }}>
         <Link href="/blog/" className="action-link" style={{ fontWeight: 600 }}>
-          <span>← BACK TO TECHNICAL MEMORANDUMS</span>
+          <span>← BACK TO ENGINEERING NOTES</span>
         </Link>
       </div>
 
@@ -34,10 +34,10 @@ export default async function BlogPostPage({
         <header className="whitepaper-header">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
             <span className="stamp stamp-spec" style={{ fontSize: '10px' }}>
-              TECHNICAL MEMORANDUM // {post.slug.toUpperCase()}
+              TECHNICAL NOTE // {post.slug.toUpperCase()}
             </span>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--ink-muted)' }}>
-              DWG-DOC-{post.date.replace(/-/g, '')}
+              DOC-ID: {post.date.replace(/-/g, '')}
             </span>
           </div>
 
@@ -53,7 +53,7 @@ export default async function BlogPostPage({
           </div>
         </header>
 
-        {/* Table of Contents if headings exist */}
+        {/* Table of Contents */}
         {post.toc.length > 0 && (
           <aside style={{ background: 'var(--paper-sheet-alt)', border: '1.5px dashed var(--pencil-blue)', padding: '16px 20px', margin: '0 0 32px', borderRadius: '2px' }}>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--pencil-blue)', fontWeight: 700, display: 'block', marginBottom: '8px' }}>
@@ -77,11 +77,11 @@ export default async function BlogPostPage({
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
 
-        {/* Author Signoff Spec Box */}
+        {/* Author Signoff Box */}
         <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '2px solid var(--pencil-blue)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
           <div>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--pencil-blue)', fontWeight: 700, display: 'block' }}>
-              DOCUMENT SIGN-OFF // AI SYSTEMS ARCHITECT
+              AUTHOR // AI ENGINEER
             </span>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: '14px', fontWeight: 700 }}>
               Saptarshi Bandopadhyay
@@ -90,11 +90,11 @@ export default async function BlogPostPage({
 
           <div style={{ display: 'flex', gap: '16px' }}>
             <Link href="/blog/" className="action-link" style={{ fontWeight: 700 }}>
-              <span>MORE MEMOS →</span>
+              <span>MORE ARTICLES →</span>
             </Link>
-            <Link href="/contact/" className="action-link" style={{ fontWeight: 700 }}>
-              <span>TRANSMIT FEEDBACK →</span>
-            </Link>
+            <a href="mailto:bandopadhyaysaptarshi@gmail.com" className="action-link" style={{ fontWeight: 700 }}>
+              <span>SEND FEEDBACK →</span>
+            </a>
           </div>
         </div>
       </article>

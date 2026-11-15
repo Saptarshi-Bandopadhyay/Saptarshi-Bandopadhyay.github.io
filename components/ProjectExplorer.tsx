@@ -7,39 +7,39 @@ import { sound } from '@/lib/sound'
 
 export function ProjectExplorer({ items }: { items: Project[] }) {
   const [activeProject, setActiveProject] = useState<Project>(items[0])
-  const [activeStep, setActiveStep] = useState<number>(0)
+  const [activeStage, setActiveStage] = useState<number>(0)
 
   const handleSelectProject = (p: Project) => {
     sound.playMechanicalClick()
     setActiveProject(p)
-    setActiveStep(0)
+    setActiveStage(0)
   }
 
-  const handleSelectStep = (idx: number) => {
+  const handleSelectStage = (idx: number) => {
     sound.playPencilTick()
-    setActiveStep(idx)
+    setActiveStage(idx)
   }
 
   return (
     <div className="schematic-viewer">
-      {/* Top Drafting Bar: Active Drawing Spec */}
+      {/* Top Bar: System Architecture Spec */}
       <div className="schematic-top">
         <div className="schematic-title">
-          <span>📐 CAD SCHEMATIC:</span>
-          <span>{activeProject.dwgNo} // {activeProject.name}</span>
+          <span>⚡ SYSTEM PIPELINE:</span>
+          <span>{activeProject.sysId} // {activeProject.name}</span>
           <span className="stamp stamp-spec" style={{ fontSize: '9px', padding: '2px 8px' }}>
             {activeProject.status}
           </span>
         </div>
         <div className="schematic-controls">
           <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'var(--ink-muted)', alignSelf: 'center' }}>
-            STEP {activeStep + 1} OF {activeProject.steps.length}:
+            STAGE {activeStage + 1} OF {activeProject.stages.length}:
           </span>
-          {activeProject.steps.map((_, i) => (
+          {activeProject.stages.map((_, i) => (
             <button
               key={i}
-              className={`step-btn ${i === activeStep ? 'active' : ''}`}
-              onClick={() => handleSelectStep(i)}
+              className={`step-btn ${i === activeStage ? 'active' : ''}`}
+              onClick={() => handleSelectStage(i)}
             >
               0{i + 1}
             </button>
@@ -47,22 +47,22 @@ export function ProjectExplorer({ items }: { items: Project[] }) {
         </div>
       </div>
 
-      {/* Interactive Blueprint Pipeline Graph */}
+      {/* Interactive Architecture Flow Graph */}
       <div className="pipeline-flow">
-        {activeProject.steps.map((step, i) => {
-          const isSelected = i === activeStep
+        {activeProject.stages.map((st, i) => {
+          const isSelected = i === activeStage
           return (
             <div
-              key={step.id}
+              key={st.id}
               className={`node-card ${isSelected ? 'active' : ''}`}
-              onClick={() => handleSelectStep(i)}
+              onClick={() => handleSelectStage(i)}
             >
-              <span className="node-idx">STAGE {step.id} [{step.type.toUpperCase()}]</span>
-              <h3 className="node-title">{step.title}</h3>
-              <p className="node-desc">{step.spec}</p>
+              <span className="node-idx">STAGE {st.id} [{st.type.toUpperCase()}]</span>
+              <h3 className="node-title">{st.title}</h3>
+              <p className="node-desc">{st.spec}</p>
               {isSelected && (
                 <div className="dimension-line" style={{ margin: '8px 0 0', fontSize: '9px' }}>
-                  <span>ACTIVE PAYLOAD FLOW</span>
+                  <span>ACTIVE EXECUTION PATH</span>
                 </div>
               )}
             </div>
@@ -70,7 +70,7 @@ export function ProjectExplorer({ items }: { items: Project[] }) {
         })}
       </div>
 
-      {/* Blueprint Footer Details: Metrics, Stack, Links */}
+      {/* System Footer Details: Metrics, Stack, Links */}
       <div style={{ padding: '20px', borderTop: '1px solid var(--pencil-blue)', background: 'var(--paper-sheet)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <div>
@@ -107,13 +107,25 @@ export function ProjectExplorer({ items }: { items: Project[] }) {
                 <span>↗</span>
               </a>
             )}
+            {activeProject.prUrl && (
+              <a
+                href={activeProject.prUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="action-link"
+                onClick={() => sound.playMechanicalClick()}
+              >
+                <span>VERIFY PR</span>
+                <span>↗</span>
+              </a>
+            )}
             <Link
               href={`/projects/${activeProject.slug}/`}
               className="action-link"
               onClick={() => sound.playMechanicalClick()}
               style={{ fontWeight: 700 }}
             >
-              <span>INSPECT FULL SPEC SHEET</span>
+              <span>INSPECT ARCHITECTURE</span>
               <span>→</span>
             </Link>
           </div>
@@ -127,10 +139,10 @@ export function ProjectExplorer({ items }: { items: Project[] }) {
         </div>
       </div>
 
-      {/* Quick Select Project Strip */}
+      {/* Select System Tab */}
       <div style={{ borderTop: '1px solid var(--paper-border)', background: 'var(--paper-sheet-alt)', padding: '10px 16px', display: 'flex', gap: '8px', overflowX: 'auto' }}>
         <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: 'var(--ink-muted)', alignSelf: 'center', whiteSpace: 'nowrap' }}>
-          SELECT SCHEMATIC:
+          SELECT MODULE:
         </span>
         {items.map((p) => (
           <button
@@ -139,7 +151,7 @@ export function ProjectExplorer({ items }: { items: Project[] }) {
             onClick={() => handleSelectProject(p)}
             style={{ fontSize: '10px', whiteSpace: 'nowrap' }}
           >
-            {p.dwgNo} · {p.name}
+            {p.sysId} · {p.name}
           </button>
         ))}
       </div>

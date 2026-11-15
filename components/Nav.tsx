@@ -10,8 +10,6 @@ const NAV_ITEMS = [
   { href: '/projects/', label: 'PROJECTS', idx: '02' },
   { href: '/experience/', label: 'EXPERIENCE', idx: '03' },
   { href: '/blog/', label: 'BLOG', idx: '04' },
-  { href: '/about/', label: 'ABOUT', idx: '05' },
-  { href: '/contact/', label: 'CONTACT', idx: '06' },
 ]
 
 const RESUME_URL = 'https://drive.google.com/file/d/1ddpzunXfs3w37A6xgLscMR3WP9OmBlNL/view?usp=sharing'
@@ -60,16 +58,16 @@ export function Nav() {
     <>
       <header className="nav-wrapper">
         <div className="nav-container">
-          {/* Technical Brand Badge */}
+          {/* Brand Logo */}
           <Link href="/" className="brand-badge" onClick={handleNavClick}>
             <span className="badge-icon">SB</span>
             <div>
               <span>SAPTARSHI.DEV</span>
-              <span className="brand-sub">DWG-2026 // REV-04</span>
+              <span className="brand-sub">SYS-2026 // AI ENGINEER</span>
             </div>
           </Link>
 
-          {/* Clean Extension-Free Navigation Tabs */}
+          {/* Clean 4-Tab Main Navigation */}
           <nav className="nav-tabs" aria-label="Main Navigation">
             {NAV_ITEMS.map((item) => {
               const isActive = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href)
@@ -87,7 +85,7 @@ export function Nav() {
             })}
           </nav>
 
-          {/* Right Action Tools: Audio Toggle, Resume, Command Palette */}
+          {/* Controls: Audio Toggle, Resume, Command Palette */}
           <div className="nav-actions">
             {mounted && (
               <button
@@ -117,7 +115,7 @@ export function Nav() {
                 sound.playMechanicalClick()
                 setPaletteOpen(true)
               }}
-              title="CAD Command Palette (⌘K)"
+              title="Command Palette (⌘K)"
             >
               <span>⌘K</span>
             </button>
@@ -125,7 +123,7 @@ export function Nav() {
         </div>
       </header>
 
-      {/* CAD Terminal Command Palette (⌘K) */}
+      {/* Terminal Command Palette (⌘K) */}
       {paletteOpen && (
         <div className="palette-overlay" onClick={() => setPaletteOpen(false)}>
           <div className="palette-box" onClick={(e) => e.stopPropagation()}>
@@ -134,7 +132,7 @@ export function Nav() {
               <input
                 autoFocus
                 className="palette-input"
-                placeholder="Jump to section or enter command (e.g. projects, blog, experience)..."
+                placeholder="Jump to page or contact channel (e.g. projects, experience, email)..."
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') {
                     const query = e.currentTarget.value.toLowerCase().trim()
@@ -161,13 +159,22 @@ export function Nav() {
                 </button>
               ))}
               <a
+                href="mailto:bandopadhyaysaptarshi@gmail.com"
+                className="palette-item"
+                onClick={handleNavClick}
+              >
+                <span className="item-idx">05</span>
+                <span>EMAIL SAPTARSHI</span>
+                <span style={{ color: 'var(--pencil-blue)' }}>↗</span>
+              </a>
+              <a
                 href={RESUME_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="palette-item"
                 onClick={handleNavClick}
               >
-                <span className="item-idx">07</span>
+                <span className="item-idx">06</span>
                 <span>OFFICIAL RESUME (PDF)</span>
                 <span style={{ color: 'var(--pencil-blue)' }}>↗</span>
               </a>

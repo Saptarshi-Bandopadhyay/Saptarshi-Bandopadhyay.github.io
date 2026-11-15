@@ -24,25 +24,25 @@ export default async function ProjectDetailPage({
       {/* Return to Catalog Breadcrumb */}
       <div style={{ marginBottom: '24px' }}>
         <Link href="/projects/" className="action-link" style={{ fontWeight: 600 }}>
-          <span>← BACK TO SPEC CATALOG</span>
+          <span>← BACK TO PROJECTS</span>
         </Link>
       </div>
 
       {/* Main Engineering Blueprint Spec Sheet */}
       <article className="blueprint-card" style={{ padding: '0', border: '2px solid var(--pencil-blue)' }}>
-        {/* Drawing Title Block */}
+        {/* Title Block */}
         <div className="arch-title-block" style={{ margin: 0, border: 'none', borderBottom: '2px solid var(--pencil-blue)' }}>
           <div className="title-block-grid">
             <div className="title-cell">
-              <span className="cell-label">DRAWING ID</span>
-              <span className="cell-value">{p.dwgNo} // {p.category}</span>
+              <span className="cell-label">MODULE IDENTIFIER</span>
+              <span className="cell-value">{p.sysId} // {p.category}</span>
             </div>
             <div className="title-cell">
-              <span className="cell-label">SYSTEM CLASSIFICATION</span>
+              <span className="cell-label">SYSTEM TYPE</span>
               <span className="cell-value">{p.type}</span>
             </div>
             <div className="title-cell">
-              <span className="cell-label">STATUS</span>
+              <span className="cell-label">DEPLOYMENT STATUS</span>
               <span className="cell-value" style={{ color: 'var(--stamp-red)' }}>{p.status}</span>
             </div>
           </div>
@@ -59,23 +59,23 @@ export default async function ProjectDetailPage({
           {/* Measured Output Metric */}
           <div className="dimension-line" style={{ margin: '0 0 28px', fontSize: '12px' }}>
             <span className="dimension-arrow-left"></span>
-            <span>SPECIFICATION BENCHMARK: {p.metric}</span>
+            <span>SYSTEM BENCHMARK: {p.metric}</span>
             <span className="dimension-arrow-right"></span>
           </div>
 
-          {/* System Architecture Flow Diagram */}
+          {/* System Pipeline Dataflow */}
           <section style={{ margin: '32px 0' }}>
             <span className="stamp stamp-spec" style={{ fontSize: '10px', marginBottom: '12px' }}>
-              SECTION A-A // PIPELINE DATAFLOW
+              PIPELINE GRAPH // DATAFLOW TRANSFORMATIONS
             </span>
             <h2 style={{ fontSize: '20px', margin: '8px 0 16px', color: 'var(--pencil-blue-deep)' }}>
               Execution Stages & Transformers
             </h2>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {p.steps.map((step) => (
+              {p.stages.map((st) => (
                 <div
-                  key={step.id}
+                  key={st.id}
                   style={{
                     display: 'grid',
                     gridTemplateColumns: '70px 1fr',
@@ -87,12 +87,12 @@ export default async function ProjectDetailPage({
                   }}
                 >
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 700, color: 'var(--pencil-blue)' }}>
-                    [{step.id}]
+                    [{st.id}]
                   </div>
                   <div>
-                    <h3 style={{ margin: '0 0 4px', fontSize: '15px', color: 'var(--ink-primary)' }}>{step.title}</h3>
+                    <h3 style={{ margin: '0 0 4px', fontSize: '15px', color: 'var(--ink-primary)' }}>{st.title}</h3>
                     <p style={{ margin: 0, fontSize: '13px', color: 'var(--ink-secondary)', fontFamily: 'var(--font-mono)' }}>
-                      {step.spec}
+                      {st.spec}
                     </p>
                   </div>
                 </div>
@@ -103,7 +103,7 @@ export default async function ProjectDetailPage({
           {/* System Overview */}
           <section style={{ margin: '36px 0' }}>
             <h2 style={{ fontSize: '20px', color: 'var(--pencil-blue-deep)', borderBottom: '1px solid var(--paper-border)', paddingBottom: '8px', margin: '0 0 14px' }}>
-              System Overview
+              System Overview & Problem Statement
             </h2>
             <p style={{ fontSize: '15px', lineHeight: 1.8, color: 'var(--ink-secondary)' }}>
               {p.overview}
@@ -113,7 +113,7 @@ export default async function ProjectDetailPage({
           {/* Key Design Decisions */}
           <section style={{ margin: '36px 0' }}>
             <h2 style={{ fontSize: '20px', color: 'var(--pencil-blue-deep)', borderBottom: '1px solid var(--paper-border)', paddingBottom: '8px', margin: '0 0 14px' }}>
-              Architectural & Engineering Trade-Offs
+              Architectural & Algorithmic Decisions
             </h2>
             <ul style={{ paddingLeft: '20px', fontSize: '14px', lineHeight: 1.8, color: 'var(--ink-secondary)' }}>
               {p.designDecisions.map((dec, i) => (
@@ -125,7 +125,7 @@ export default async function ProjectDetailPage({
           {/* Failure Modes & Guardrails */}
           <section style={{ margin: '36px 0' }}>
             <h2 style={{ fontSize: '20px', color: 'var(--pencil-blue-deep)', borderBottom: '1px solid var(--paper-border)', paddingBottom: '8px', margin: '0 0 14px' }}>
-              Failure Modes & Resiliency Mechanisms
+              Edge Cases & Numerical Stability
             </h2>
             <ul style={{ paddingLeft: '20px', fontSize: '14px', lineHeight: 1.8, color: 'var(--ink-secondary)' }}>
               {p.failureModes.map((fm, i) => (
@@ -134,10 +134,10 @@ export default async function ProjectDetailPage({
             </ul>
           </section>
 
-          {/* Tech Stack Component Assembly */}
+          {/* Tech Stack */}
           <section style={{ margin: '36px 0' }}>
             <h2 style={{ fontSize: '20px', color: 'var(--pencil-blue-deep)', borderBottom: '1px solid var(--paper-border)', paddingBottom: '8px', margin: '0 0 14px' }}>
-              Hardware & Software Components
+              Technologies & Frameworks
             </h2>
             <div className="stack-tags" style={{ marginTop: '12px' }}>
               {p.stack.map((item) => (
@@ -152,7 +152,7 @@ export default async function ProjectDetailPage({
           <div style={{ marginTop: '36px', paddingTop: '20px', borderTop: '2px solid var(--pencil-blue)', display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
             {p.github && (
               <a href={p.github} target="_blank" rel="noopener noreferrer" className="resume-btn">
-                <span>INSPECT GITHUB CODEBASE</span>
+                <span>VIEW GITHUB REPOSITORY</span>
                 <span>↗</span>
               </a>
             )}
@@ -164,7 +164,7 @@ export default async function ProjectDetailPage({
             )}
             {p.prUrl && (
               <a href={p.prUrl} target="_blank" rel="noopener noreferrer" className="filter-btn" style={{ fontWeight: 600, padding: '8px 16px' }}>
-                <span>VIEW MERGED PULL REQUEST</span>
+                <span>VIEW UPSTREAM MERGED PULL REQUEST</span>
                 <span>↗</span>
               </a>
             )}

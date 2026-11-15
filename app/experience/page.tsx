@@ -1,67 +1,66 @@
 import React from 'react'
-import { sound } from '@/lib/sound'
 
 const RESUME_URL = 'https://drive.google.com/file/d/1ddpzunXfs3w37A6xgLscMR3WP9OmBlNL/view?usp=sharing'
 
-const LOGBOOK_ENTRIES = [
+const EXPERIENCE_ENTRIES = [
   {
-    id: 'LOG-01',
+    id: 'ROLE-01',
     period: 'SEP 2025 — PRESENT',
     company: 'AI Tech UK',
-    location: 'Leeds, England (Remote)',
+    location: 'Leeds, England (Remote / Contract)',
     role: 'AI Engineer',
-    stamp: 'CURRENT POSITION',
-    stampClass: 'stamp-approved',
-    systems: ['FastAPI', 'Microsoft Graph API', 'AWS SES', 'MySQL', 'LangGraph'],
-    achievements: [
-      'Eliminated manual administrative overhead for Outlook users by developing a personal AI assistant for autonomous meeting scheduling, email responses, follow-ups, rule-based delegation, and post-meeting note generation.',
-      'Reduced manual compliance overhead by architecting an end-to-end warehouse compliance agent that autonomously monitors email inboxes via Microsoft Graph API to classify operations, extract structured data, track process steps, and generate automated risk-analysis reports.',
-      'Scaled automation capacity by designing high-volume, event-driven backends with FastAPI, MySQL, SQLAlchemy, and integrating Microsoft Graph API and AWS SES to support mission-critical enterprise workflows.',
+    badge: 'CURRENT ROLE',
+    badgeClass: 'stamp-approved',
+    stack: ['FastAPI', 'Microsoft Graph API', 'AWS SES', 'MySQL', 'SQLAlchemy', 'Python', 'LangGraph'],
+    highlights: [
+      'Architected an autonomous Outlook AI assistant that eliminated manual administrative overhead by orchestrating automated meeting scheduling, contextual email drafting, rule-based delegation, and post-meeting note generation.',
+      'Designed an end-to-end warehouse compliance agent that autonomously monitors high-volume email streams via Microsoft Graph API to classify operations, extract structured metadata, track compliance milestones, and generate automated risk-analysis reports.',
+      'Engineered event-driven backends with FastAPI, MySQL, and SQLAlchemy, integrating Microsoft Graph API webhooks and AWS SES for high-reliability enterprise message dispatching.',
     ],
   },
   {
-    id: 'LOG-02',
+    id: 'ROLE-02',
     period: 'SEP 2024 — JAN 2025',
     company: 'Binoloop',
     location: 'Alberta, Canada (Remote)',
     role: 'Machine Learning Engineer Intern',
-    stamp: 'COMPLETED SERVICE',
-    stampClass: 'stamp-spec',
-    systems: ['LangGraph', 'Milvus Hybrid Search', 'Playwright', 'PostgreSQL', 'Python'],
-    achievements: [
-      'Architected a multi-step RAG Agent utilizing LangGraph for orchestration and Milvus (Hybrid Search) to deliver high-throughput, streamed query responses.',
-      'Engineered and integrated advanced LLM techniques (Query Expansion, Decomposition, Answer Regeneration) to significantly boost contextual accuracy across large document corpora.',
-      'Streamlined data lifecycle management through the deployment of an autonomous AI-ETL Agent that dynamically scraped and transformed unstructured web data for structured PostgreSQL ingestion.',
+    badge: 'COMPLETED TENURE',
+    badgeClass: 'stamp-spec',
+    stack: ['LangGraph', 'Milvus Hybrid Search', 'Playwright', 'PostgreSQL', 'Python', 'FastAPI'],
+    highlights: [
+      'Architected a multi-step RAG Agent utilizing LangGraph for stateful graph orchestration and Milvus for hybrid vector/sparse search to deliver streamed, citation-backed query responses.',
+      'Engineered advanced LLM retrieval mechanisms including semantic query expansion, question decomposition, and dynamic answer verification across tens of thousands of technical documents.',
+      'Deployed an autonomous AI-ETL Agent powered by Playwright that dynamically scraped, normalized, and validated high-volume unstructured web records for structured PostgreSQL ingestion.',
     ],
   },
   {
-    id: 'LOG-03',
+    id: 'ROLE-03',
     period: 'OCT 2023 — FEB 2024',
     company: 'Unify',
     location: 'London, England (Open Source)',
     role: 'Machine Learning Engineer — Top Contributor',
-    stamp: 'VERIFIED OSS CONTRIB',
-    stampClass: 'stamp-verified',
-    systems: ['Python', 'NumPy', 'PyTorch', 'TensorFlow', 'JAX', 'Hypothesis'],
+    badge: 'VERIFIED OSS MERGE',
+    badgeClass: 'stamp-verified',
+    stack: ['Python', 'NumPy', 'PyTorch', 'TensorFlow', 'JAX', 'Hypothesis'],
     prUrl: 'https://github.com/unifyai/ivy/pull/22199',
-    achievements: [
-      'Added instance methods to the NumPy frontend for Unify’s Ivy framework, enabling seamless cross-framework conversion and code unification.',
-      'Developed robust property-based test functions for instance methods using Hypothesis to guarantee numeric precision under diverse tensor backends.',
-      'Recognized as an official Top Contributor with merged PR #22199 in the upstream repository.',
+    highlights: [
+      'Implemented NumPy frontend instance methods for the Ivy unified machine learning framework, ensuring transparent cross-framework execution and identical casting behavior.',
+      'Authored property-based test suites using Hypothesis to guarantee numeric gradient precision across PyTorch, TensorFlow, and JAX execution backends.',
+      'Awarded Top Contributor distinction with merged pull request #22199 in the upstream repository.',
     ],
   },
   {
-    id: 'LOG-04',
+    id: 'ROLE-04',
     period: '2021 — 2025',
     company: 'JIS University',
     location: 'Kolkata, India',
     role: 'B.Tech — Computer Science & Engineering',
-    stamp: 'DEGREE CONFERRED',
-    stampClass: 'stamp-spec',
-    systems: ['Computer Vision', 'NLP', 'Deep Learning', 'Distributed Systems'],
-    achievements: [
-      'Conducted extensive deep learning research and implementation spanning Computer Vision (SnapScript, UnoViz), Machine Translation (CrossTalk), and metric learning.',
-      'Graduated with honors in Computer Science, focusing on practical AI systems and autonomous software engineering.',
+    badge: 'DEGREE CONFERRED',
+    badgeClass: 'stamp-spec',
+    stack: ['Distributed Systems', 'Computer Vision', 'Deep Learning', 'Data Structures & Algorithms'],
+    highlights: [
+      'Graduated with honors in Computer Science, focusing on neural network architectures, sequence-to-sequence transformers, and metric learning.',
+      'Developed standalone deep learning research projects including SnapScript (vision-language captioning) and UnoViz (one-shot Siamese face verification).',
     ],
   },
 ]
@@ -73,18 +72,18 @@ export default function ExperiencePage() {
       <div className="arch-title-block">
         <div className="title-block-grid">
           <div className="title-cell">
-            <span className="cell-label">DOCUMENT TYPE</span>
-            <span className="cell-value">DWG-SERVICE-LOG // CAREER TRAJECTORY</span>
+            <span className="cell-label">SYSTEM RECORD</span>
+            <span className="cell-value">PROFESSIONAL EXPERIENCE & ROLES</span>
           </div>
           <div className="title-cell">
-            <span className="cell-label">ENGINEER SPECIFICATION</span>
-            <span className="cell-value">SAPTARSHI BANDOPADHYAY</span>
+            <span className="cell-label">FOCUS AREA</span>
+            <span className="cell-value">AGENTIC AI, RETRIEVAL & BACKEND SYSTEMS</span>
           </div>
           <div className="title-cell">
-            <span className="cell-label">OFFICIAL RESUME</span>
+            <span className="cell-label">CURRICULUM VITAE</span>
             <span className="cell-value">
               <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--pencil-blue)', textDecoration: 'underline' }}>
-                VIEW GOOGLE DRIVE PDF ↗
+                VIEW RESUME PDF ↗
               </a>
             </span>
           </div>
@@ -92,38 +91,38 @@ export default function ExperiencePage() {
 
         <div className="title-block-hero">
           <div className="hero-titles">
-            <h1>Engineering Service Record</h1>
+            <h1>Professional Experience</h1>
             <p className="hero-tagline">
-              A chronological logbook of production systems architected, high-throughput pipelines deployed, and open-source contributions.
+              Production systems architected, high-volume event-driven backends deployed, and open-source contributions.
             </p>
           </div>
           <div className="stamp stamp-spec hide-mobile">
-            SHEET 03 / 05
+            EXPERIENCE // 03
           </div>
         </div>
       </div>
 
-      {/* Logbook Timeline */}
+      {/* Experience Timeline */}
       <div className="logbook-timeline">
-        {LOGBOOK_ENTRIES.map((entry) => (
+        {EXPERIENCE_ENTRIES.map((entry) => (
           <article key={entry.id} className="logbook-entry">
-            {/* Sidebar Info: Period & Stamp */}
+            {/* Sidebar Metadata */}
             <div className="entry-sidebar">
               <span className="entry-period">{entry.period}</span>
               <span className="entry-location">{entry.location}</span>
               <div style={{ marginTop: '12px' }}>
-                <span className={`stamp ${entry.stampClass}`} style={{ fontSize: '9px', padding: '3px 6px' }}>
-                  {entry.stamp}
+                <span className={`stamp ${entry.badgeClass}`} style={{ fontSize: '9px', padding: '3px 6px' }}>
+                  {entry.badge}
                 </span>
               </div>
             </div>
 
-            {/* Main Content Body */}
+            {/* Entry Content */}
             <div className="entry-content">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '8px' }}>
                 <h2>{entry.role}</h2>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--pencil-blue)' }}>
-                  ENTRY REF: {entry.id}
+                  ID: {entry.id}
                 </span>
               </div>
 
@@ -131,12 +130,12 @@ export default function ExperiencePage() {
 
               {/* Achievements & Responsibilities */}
               <ul className="entry-duties">
-                {entry.achievements.map((item, idx) => (
+                {entry.highlights.map((item, idx) => (
                   <li key={idx}>{item}</li>
                 ))}
               </ul>
 
-              {/* Verified PR Link if available */}
+              {/* Verified PR Link */}
               {entry.prUrl && (
                 <div style={{ marginTop: '14px', paddingTop: '10px' }}>
                   <a
@@ -146,7 +145,7 @@ export default function ExperiencePage() {
                     className="action-link"
                     style={{ fontWeight: 700 }}
                   >
-                    <span>VERIFY MERGED PULL REQUEST (IVY #22199)</span>
+                    <span>VERIFY UPSTREAM MERGED PULL REQUEST (IVY #22199)</span>
                     <span>↗</span>
                   </a>
                 </div>
@@ -154,7 +153,7 @@ export default function ExperiencePage() {
 
               {/* Systems Stack */}
               <div className="stack-tags" style={{ marginTop: '16px' }}>
-                {entry.systems.map((s) => (
+                {entry.stack.map((s) => (
                   <span key={s} className="stack-tag">{s}</span>
                 ))}
               </div>
@@ -163,11 +162,11 @@ export default function ExperiencePage() {
         ))}
       </div>
 
-      {/* Bottom Action Card */}
+      {/* Bottom Resume Action */}
       <div className="blueprint-card" style={{ marginTop: '48px', padding: '24px', textAlign: 'center' }}>
-        <h3 style={{ margin: '0 0 8px', fontSize: '18px' }}>Need the complete formal resume?</h3>
+        <h3 style={{ margin: '0 0 8px', fontSize: '18px' }}>Looking for full academic and career credentials?</h3>
         <p style={{ margin: '0 0 16px', color: 'var(--ink-secondary)', fontSize: '14px' }}>
-          Download the latest curriculum vitae with full contact references and academic metrics.
+          Download the complete PDF resume containing formal background, honors, and direct contact details.
         </p>
         <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="resume-btn" style={{ padding: '10px 24px', fontSize: '13px' }}>
           <span>DOWNLOAD RESUME (PDF)</span>
