@@ -49,7 +49,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Quick Navigation Strip */}
+        {/* Quick Navigation Strip Including ABOUT */}
         <div style={{ display: 'flex', gap: '16px', padding: '14px 28px', borderTop: '1px solid var(--pencil-blue)', background: 'var(--pencil-blue-light)', flexWrap: 'wrap' }}>
           <Link href="/projects/" className="action-link" style={{ fontWeight: 700 }}>
             <span>PROJECTS CATALOG</span>
@@ -63,6 +63,11 @@ export default function Home() {
           <span style={{ color: 'var(--pencil-blue)' }}>|</span>
           <Link href="/blog/" className="action-link" style={{ fontWeight: 700 }}>
             <span>TECHNICAL BLOG</span>
+            <span>→</span>
+          </Link>
+          <span style={{ color: 'var(--pencil-blue)' }}>|</span>
+          <Link href="/about/" className="action-link" style={{ fontWeight: 700 }}>
+            <span>ABOUT SPEC</span>
             <span>→</span>
           </Link>
           <span style={{ color: 'var(--pencil-blue)' }}>|</span>

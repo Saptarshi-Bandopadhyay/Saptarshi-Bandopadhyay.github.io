@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { href: '/projects/', label: 'PROJECTS', idx: '02' },
   { href: '/experience/', label: 'EXPERIENCE', idx: '03' },
   { href: '/blog/', label: 'BLOG', idx: '04' },
+  { href: '/about/', label: 'ABOUT', idx: '05' },
 ]
 
 const RESUME_URL = 'https://drive.google.com/file/d/1ddpzunXfs3w37A6xgLscMR3WP9OmBlNL/view?usp=sharing'
@@ -67,7 +68,7 @@ export function Nav() {
             </div>
           </Link>
 
-          {/* Clean 4-Tab Main Navigation */}
+          {/* Clean Main Navigation Tabs Including ABOUT */}
           <nav className="nav-tabs" aria-label="Main Navigation">
             {NAV_ITEMS.map((item) => {
               const isActive = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href)
@@ -132,7 +133,7 @@ export function Nav() {
               <input
                 autoFocus
                 className="palette-input"
-                placeholder="Jump to page or contact channel (e.g. projects, experience, email)..."
+                placeholder="Jump to page or command (e.g. about, projects, experience, email)..."
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') {
                     const query = e.currentTarget.value.toLowerCase().trim()
@@ -163,7 +164,7 @@ export function Nav() {
                 className="palette-item"
                 onClick={handleNavClick}
               >
-                <span className="item-idx">05</span>
+                <span className="item-idx">06</span>
                 <span>EMAIL SAPTARSHI</span>
                 <span style={{ color: 'var(--pencil-blue)' }}>↗</span>
               </a>
@@ -174,7 +175,7 @@ export function Nav() {
                 className="palette-item"
                 onClick={handleNavClick}
               >
-                <span className="item-idx">06</span>
+                <span className="item-idx">07</span>
                 <span>OFFICIAL RESUME (PDF)</span>
                 <span style={{ color: 'var(--pencil-blue)' }}>↗</span>
               </a>
