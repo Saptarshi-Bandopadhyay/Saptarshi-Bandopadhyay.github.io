@@ -41,7 +41,7 @@ export default function BlogIndexPage() {
       <BlogExplorer posts={posts} />
 
       {/* Publishing Instructions for Saptarshi */}
-      <div className="blueprint-card" style={{ marginTop: '48px', padding: '20px', background: 'var(--pencil-blue-light)' }}>
+      {/* <div className="blueprint-card" style={{ marginTop: '48px', padding: '20px', background: 'var(--pencil-blue-light)' }}>
         <span className="stamp stamp-spec" style={{ fontSize: '9px', marginBottom: '8px' }}>
           DEVELOPER NOTE // WRITING ARTICLES
         </span>
@@ -51,7 +51,7 @@ export default function BlogIndexPage() {
         <p style={{ margin: 0, fontSize: '13px', color: 'var(--ink-secondary)', lineHeight: 1.6 }}>
           Simply add any markdown file to <code>content/blog/your-post-title.md</code> with frontmatter (<code>title</code>, <code>date</code>, <code>description</code>, <code>tags</code>). Next.js automatically parses, extracts table of contents, and deploys clean extension-free URLs at <code>/blog/your-post-title/</code>!
         </p>
-      </div>
+      </div> */}
     </div>
   )
 }
