@@ -1,9 +1,3 @@
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
-
-const PROJECTS_DIR = path.join(process.cwd(), 'content/projects')
-
 export type PipelineStage = {
   id: string
   title: string
@@ -16,8 +10,8 @@ export type Project = {
   name: string
   sysId: string
   type: string
-  category: string
-  status: string
+  category: 'COMPUTER VISION' | 'NLP & TRANSFORMERS' | 'DEEP LEARNING' | 'OPEN SOURCE'
+  status: 'DEPLOYED' | 'VERIFIED PR' | 'RESEARCH SPEC'
   summary: string
   metric: string
   metricLabel: string
@@ -31,8 +25,7 @@ export type Project = {
   failureModes: string[]
 }
 
-// Fallback projects if filesystem is inaccessible on client
-const FALLBACK_PROJECTS: Project[] = [
+export const projects: Project[] = [
   {
     slug: 'snap-script',
     name: 'SnapScript: Image Captioning Engine',
@@ -147,48 +140,3 @@ const FALLBACK_PROJECTS: Project[] = [
     ],
   },
 ]
-
-export function getAllProjects(): Project[] {
-  try {
-    if (typeof window !== 'undefined' || !fs.existsSync(PROJECTS_DIR)) {
-      return FALLBACK_PROJECTS
-    }
-
-    const files = fs
-      .readdirSync(PROJECTS_DIR)
-      .filter((f) => f.endsWith('.md') && f !== 'how-to-add-a-project.md')
-
-    if (files.length === 0) return FALLBACK_PROJECTS
-
-    return files.map((file) => {
-      const slug = file.replace(/\.md$/, '')
-      const fullPath = path.join(PROJECTS_DIR, file)
-      const rawContent = fs.readFileSync(fullPath, 'utf8')
-      const { data, content } = matter(rawContent)
-
-      return {
-        slug,
-        name: String(data.name ?? 'Untitled Module'),
-        sysId: String(data.sysId ?? 'SYS-GEN-00'),
-        type: String(data.type ?? 'Software System'),
-        category: String(data.category ?? 'SYSTEMS'),
-        status: String(data.status ?? 'DEPLOYED'),
-        summary: String(data.summary ?? ''),
-        metric: String(data.metric ?? 'Verified'),
-        metricLabel: String(data.metricLabel ?? 'EVALUATION'),
-        stack: Array.isArray(data.stack) ? data.stack.map(String) : [],
-        stages: Array.isArray(data.stages) ? (data.stages as PipelineStage[]) : [],
-        github: data.github ? String(data.github) : undefined,
-        demo: data.demo ? String(data.demo) : undefined,
-        prUrl: data.prUrl ? String(data.prUrl) : undefined,
-        overview: content.trim() || String(data.summary ?? ''),
-        designDecisions: Array.isArray(data.designDecisions) ? data.designDecisions.map(String) : [],
-        failureModes: Array.isArray(data.failureModes) ? data.failureModes.map(String) : [],
-      }
-    })
-  } catch {
-    return FALLBACK_PROJECTS
-  }
-}
-
-export const projects: Project[] = getAllProjects()

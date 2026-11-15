@@ -1,49 +1,39 @@
-# How to Add a Project to this Portfolio
+# How to Add a Project
 
-Adding a new project is as simple as dropping a Markdown file into `content/projects/`.
+To add a new project, simply open `lib/projects.ts` and add a new object to the `projects` array:
 
-### 1. Create a new file
-Create `content/projects/your-project-slug.md`:
-
-```markdown
----
-name: Your Project Name
-sysId: SYS-AI-05
-type: Sequence Model / Autonomous Agent / Vision System
-category: COMPUTER VISION # Or 'NLP & TRANSFORMERS', 'DEEP LEARNING', 'OPEN SOURCE', 'AGENTIC AI'
-status: DEPLOYED # Or 'VERIFIED PR', 'RESEARCH SPEC', 'IN PRODUCTION'
-summary: A concise 1-2 sentence description of what the system does.
-metric: 99.2% Accuracy // <120ms Latency
-metricLabel: BENCHMARK & EVALUATION
-stack: [Python, PyTorch, FastAPI, Docker]
-github: https://github.com/Saptarshi-Bandopadhyay/your-repo
-demo: https://huggingface.co/spaces/... # optional
-stages:
-  - id: "01"
-    title: Stage Title
-    spec: What happens in this execution step
-    type: input # Or 'transformer', 'attention', 'inference', 'output'
-  - id: "02"
-    title: Inference Step
-    spec: Neural forward pass or retrieval lookup
-    type: inference
-  - id: "03"
-    title: Output Generation
-    spec: Final formatted prediction or response
-    type: output
-designDecisions:
-  - Explain why you chose this architecture or framework.
-  - Detail any optimization or latency trade-offs.
-failureModes:
-  - Mention edge cases handled (e.g. out-of-bounds input, rate limits).
----
-
-Write your full system overview, problem statement, and technical deep-dive here in Markdown!
+```typescript
+{
+  slug: 'my-new-project',
+  name: 'My New Project Title',
+  sysId: 'SYS-AI-05',
+  type: 'Autonomous Agent / Vision / Data Pipeline',
+  category: 'COMPUTER VISION', // Or 'NLP & TRANSFORMERS', 'DEEP LEARNING', 'OPEN SOURCE'
+  status: 'DEPLOYED', // Or 'VERIFIED PR', 'RESEARCH SPEC'
+  summary: 'A short 1-2 sentence description of what the system does.',
+  metric: '99.2% Accuracy // <120ms Latency',
+  metricLabel: 'BENCHMARK & EVALUATION',
+  stack: ['Python', 'FastAPI', 'PyTorch', 'Docker'],
+  github: 'https://github.com/Saptarshi-Bandopadhyay/my-repo',
+  demo: 'https://huggingface.co/spaces/...', // Optional
+  stages: [
+    { id: '01', title: 'Input Ingestion', spec: 'Raw data normalization and tokenization', type: 'input' },
+    { id: '02', title: 'Neural Inference', spec: 'Forward pass through transformer blocks', type: 'transformer' },
+    { id: '03', title: 'Output Serialization', spec: 'Generates formatted JSON payload', type: 'output' },
+  ],
+  overview: 'Detailed system overview and problem statement...',
+  designDecisions: [
+    'Why you chose this model or framework.',
+    'Performance and throughput trade-offs.',
+  ],
+  failureModes: [
+    'Handling edge cases, rate limits, and failure recovery.',
+  ],
+},
 ```
 
-### 2. That's it!
-When you push to GitHub:
-- The project will automatically appear in `/projects/`.
-- It will be filterable by category and searchable.
-- It will automatically receive its own dedicated blueprint specification sheet at `/projects/your-project-slug/`.
-- Its interactive pipeline stages will be rendered in the CAD architecture viewer with click sound effects.
+### What happens automatically:
+- The project appears in `/projects/`.
+- It gets filtered by its category.
+- It receives its own dedicated deep-dive page at `/projects/my-new-project/`.
+- Its stages render in the interactive CAD pipeline viewer with mechanical sound feedback!
