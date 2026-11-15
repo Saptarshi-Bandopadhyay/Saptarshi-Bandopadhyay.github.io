@@ -13,7 +13,7 @@ const NAV_ITEMS = [
   { href: '/about/', label: 'ABOUT', idx: '05' },
 ]
 
-const RESUME_URL = 'https://drive.google.com/file/d/1ddpzunXfs3w37A6xgLscMR3WP9OmBlNL/view?usp=sharing'
+const RESUME_URL = 'https://drive.google.com/file/d/1H4kcE37xKn7nxAQsJb5srAsnIRqMJUxp/view?usp=sharing'
 
 export function Nav() {
   const [paletteOpen, setPaletteOpen] = useState(false)

@@ -1,66 +1,77 @@
 import React from 'react'
 
-const RESUME_URL = 'https://drive.google.com/file/d/1ddpzunXfs3w37A6xgLscMR3WP9OmBlNL/view?usp=sharing'
+const RESUME_URL = 'https://drive.google.com/file/d/1H4kcE37xKn7nxAQsJb5srAsnIRqMJUxp/view?usp=sharing'
 
 const EXPERIENCE_ENTRIES = [
   {
     id: 'ROLE-01',
-    period: 'SEP 2025 — PRESENT',
+    period: 'JAN 2026 — APR 2026',
     company: 'AI Tech UK',
-    location: 'Leeds, England (Remote / Contract)',
-    role: 'AI Engineer',
-    badge: 'CURRENT ROLE',
+    location: 'Leeds, England (Remote)',
+    role: 'AI Engineer (Full-time)',
+    badge: 'COMPLETED TENURE',
     badgeClass: 'stamp-approved',
-    stack: ['FastAPI', 'Microsoft Graph API', 'AWS SES', 'MySQL', 'SQLAlchemy', 'Python', 'LangGraph'],
+    stack: ['LangGraph', 'Microsoft Graph Webhooks', 'Python', 'FastAPI', 'AWS SES'],
     highlights: [
-      'Architected an autonomous Outlook AI assistant that eliminated manual administrative overhead by orchestrating automated meeting scheduling, contextual email drafting, rule-based delegation, and post-meeting note generation.',
-      'Designed an end-to-end warehouse compliance agent that autonomously monitors high-volume email streams via Microsoft Graph API to classify operations, extract structured metadata, track compliance milestones, and generate automated risk-analysis reports.',
-      'Engineered event-driven backends with FastAPI, MySQL, and SQLAlchemy, integrating Microsoft Graph API webhooks and AWS SES for high-reliability enterprise message dispatching.',
+      'Automated high-volume Outlook email operations by engineering an AI assistant handling hundreds of incoming emails per hour across scheduling, email responses, follow-ups, rule-based delegation, and post-meeting note generation; targeting measurable reductions in manual processing time 85%.',
+      'Streamlined warehouse compliance monitoring by designing a 9-stage LangGraph agent integrated with Microsoft Graph webhooks, processing 6 operational workflows to extract structured compliance data, track workflow states, and generate risk-analysis reports; evaluated against 100 conversations with 90% classification Macro-F1.',
     ],
   },
   {
     id: 'ROLE-02',
-    period: 'SEP 2024 — JAN 2025',
-    company: 'Binoloop',
-    location: 'Alberta, Canada (Remote)',
-    role: 'Machine Learning Engineer Intern',
-    badge: 'COMPLETED TENURE',
+    period: 'SEP 2025 — DEC 2025',
+    company: 'AI Tech UK',
+    location: 'Leeds, England (Remote)',
+    role: 'AI Engineer (Intern)',
+    badge: 'INTERNSHIP',
     badgeClass: 'stamp-spec',
-    stack: ['LangGraph', 'Milvus Hybrid Search', 'Playwright', 'PostgreSQL', 'Python', 'FastAPI'],
+    stack: ['FastAPI', 'MySQL', 'SQLAlchemy', 'Python', 'Event Automation'],
     highlights: [
-      'Architected a multi-step RAG Agent utilizing LangGraph for stateful graph orchestration and Milvus for hybrid vector/sparse search to deliver streamed, citation-backed query responses.',
-      'Engineered advanced LLM retrieval mechanisms including semantic query expansion, question decomposition, and dynamic answer verification across tens of thousands of technical documents.',
-      'Deployed an autonomous AI-ETL Agent powered by Playwright that dynamically scraped, normalized, and validated high-volume unstructured web records for structured PostgreSQL ingestion.',
+      'Automated event operations across hundreds of registrations per event by engineering a FastAPI platform with MySQL and SQLAlchemy, orchestrating attendee, sponsor, and partner workflows.',
+      'Reduced manual event coordination through automated form processing, event matching, scheduling, email routing, onboarding, and follow-ups, with database-backed tracking across 12 workflow stages.',
     ],
   },
   {
     id: 'ROLE-03',
+    period: 'SEP 2024 — JAN 2025',
+    company: 'Binoloop',
+    location: 'Alberta, Canada (Remote)',
+    role: 'Machine Learning Engineer Intern',
+    badge: 'INTERNSHIP',
+    badgeClass: 'stamp-spec',
+    stack: ['LangGraph', 'Milvus Hybrid Search', 'Playwright', 'PostgreSQL', 'Recall@5', 'MRR'],
+    highlights: [
+      'Improved document retrieval across tens of thousands of documents by architecting a multi-step LangGraph RAG agent using Milvus hybrid search, query expansion, query decomposition, answer regeneration, and streamed responses; evaluated retrieval performance using Recall@5 and MRR.',
+      'Automated large-scale data extraction by building an AI-ETL agent processing 10,000 records/day, transforming unstructured sources into structured data for PostgreSQL ingestion, with 97% schema validation success.',
+    ],
+  },
+  {
+    id: 'ROLE-04',
     period: 'OCT 2023 — FEB 2024',
     company: 'Unify',
-    location: 'London, England (Open Source)',
+    location: 'London, England (Remote)',
     role: 'Machine Learning Engineer — Top Contributor',
     badge: 'VERIFIED OSS MERGE',
     badgeClass: 'stamp-verified',
     stack: ['Python', 'NumPy', 'PyTorch', 'TensorFlow', 'JAX', 'Hypothesis'],
     prUrl: 'https://github.com/unifyai/ivy/pull/22199',
     highlights: [
-      'Implemented NumPy frontend instance methods for the Ivy unified machine learning framework, ensuring transparent cross-framework execution and identical casting behavior.',
-      'Authored property-based test suites using Hypothesis to guarantee numeric gradient precision across PyTorch, TensorFlow, and JAX execution backends.',
-      'Awarded Top Contributor distinction with merged pull request #22199 in the upstream repository.',
+      'Extended Ivy’s NumPy frontend with an instance method and comprehensive tests, contributing a merged PR.',
+      'Recognized as an official Top Contributor for reliable frontend implementation across unified array backends.',
     ],
   },
   {
-    id: 'ROLE-04',
-    period: '2021 — 2025',
+    id: 'ROLE-05',
+    period: 'SEP 2021 — JUN 2025',
     company: 'JIS University',
     location: 'Kolkata, India',
-    role: 'B.Tech — Computer Science & Engineering',
+    role: 'B.Tech — Computer Science & Engineering (CGPA - 9.4)',
     badge: 'DEGREE CONFERRED',
     badgeClass: 'stamp-spec',
-    stack: ['Distributed Systems', 'Computer Vision', 'Deep Learning', 'Data Structures & Algorithms'],
+    stack: ['Distributed Systems', 'Computer Vision', 'Deep Learning', 'Algorithms'],
     highlights: [
-      'Graduated with honors in Computer Science, focusing on neural network architectures, sequence-to-sequence transformers, and metric learning.',
-      'Developed standalone deep learning research projects including SnapScript (vision-language captioning) and UnoViz (one-shot Siamese face verification).',
+      'Graduated with honors in Computer Science and Engineering with a 9.4 CGPA.',
+      'Researched and implemented deep learning models across vision-language transformers, sequence-to-sequence translation, and metric learning.',
     ],
   },
 ]
@@ -73,11 +84,11 @@ export default function ExperiencePage() {
         <div className="title-block-grid">
           <div className="title-cell">
             <span className="cell-label">SYSTEM RECORD</span>
-            <span className="cell-value">PROFESSIONAL EXPERIENCE & ROLES</span>
+            <span className="cell-value">PROFESSIONAL EXPERIENCE & TENURE</span>
           </div>
           <div className="title-cell">
             <span className="cell-label">FOCUS AREA</span>
-            <span className="cell-value">AGENTIC AI, RETRIEVAL & BACKEND SYSTEMS</span>
+            <span className="cell-value">AGENTIC AI, RETRIEVAL & EVENT BACKENDS</span>
           </div>
           <div className="title-cell">
             <span className="cell-label">CURRICULUM VITAE</span>
@@ -166,7 +177,7 @@ export default function ExperiencePage() {
       <div className="blueprint-card" style={{ marginTop: '48px', padding: '24px', textAlign: 'center' }}>
         <h3 style={{ margin: '0 0 8px', fontSize: '18px' }}>Looking for full academic and career credentials?</h3>
         <p style={{ margin: '0 0 16px', color: 'var(--ink-secondary)', fontSize: '14px' }}>
-          Download the complete PDF resume containing formal background, honors, and direct contact details.
+          Download the updated resume containing formal background, honors, and direct contact details.
         </p>
         <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="resume-btn" style={{ padding: '10px 24px', fontSize: '13px' }}>
           <span>DOWNLOAD RESUME (PDF)</span>

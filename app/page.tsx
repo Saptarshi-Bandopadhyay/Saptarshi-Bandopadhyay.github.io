@@ -113,10 +113,10 @@ export default function Home() {
             <div style={{ borderLeft: '2px solid var(--pencil-blue)', paddingLeft: '16px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--pencil-blue)', fontWeight: 700 }}>
-                  2025 — PRESENT // AI TECH UK (LEEDS)
+                  2025 — APR 2026 // AI TECH UK (LEEDS)
                 </span>
                 <p style={{ margin: '4px 0 0', fontSize: '14px', color: 'var(--ink-secondary)' }}>
-                  AI Engineer architecting autonomous Outlook assistants, warehouse compliance agents via Microsoft Graph API, and event-driven FastAPI backends.
+                  AI Engineer engineering autonomous Outlook assistants, 9-stage LangGraph warehouse compliance agents via Microsoft Graph webhooks, and event-driven FastAPI backends.
                 </p>
               </div>
 

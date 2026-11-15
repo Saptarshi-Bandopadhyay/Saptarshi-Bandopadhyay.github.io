@@ -10,7 +10,7 @@ export type Project = {
   name: string
   sysId: string
   type: string
-  category: 'COMPUTER VISION' | 'NLP & TRANSFORMERS' | 'DEEP LEARNING' | 'OPEN SOURCE'
+  category: 'AGENTIC AI' | 'COMPUTER VISION' | 'NLP & TRANSFORMERS' | 'DEEP LEARNING' | 'OPEN SOURCE'
   status: 'DEPLOYED' | 'VERIFIED PR' | 'RESEARCH SPEC'
   summary: string
   metric: string
@@ -27,9 +27,63 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: 'axiom',
+    name: 'AXIOM: Automated X-Section Integrity & Oversight',
+    sysId: 'SYS-AXIOM-01',
+    type: 'Research Review Engine & Multi-Tier Gateway',
+    category: 'AGENTIC AI',
+    status: 'DEPLOYED',
+    summary: 'End-to-end AI research review engine using FastAPI and LangGraph to automate full-paper reproducibility audits, validating citation graphs with 98% factual precision.',
+    metric: '98% Factual Precision // <2 min Turnaround',
+    metricLabel: 'FACTUAL PRECISION & AUDIT SPEED',
+    stack: ['FastAPI', 'LangGraph', 'LiteLLM', 'Gemini 3.5', 'Groq 120B', 'Redis', 'Python'],
+    github: 'https://github.com/Saptarshi-Bandopadhyay',
+    stages: [
+      { id: '01', title: 'Cross-Section Text Parsing', spec: 'Structural text segmentation and citation graph validation', type: 'input' },
+      { id: '02', title: 'Multi-Tier LLM Routing', spec: 'Dynamic model gateway routing across LiteLLM, Gemini 3.5, and Groq 120B', type: 'transformer' },
+      { id: '03', title: 'Token Trimming & Redis Caching', spec: 'Automated prompt budget optimization achieving 99.9% pipeline availability', type: 'inference' },
+      { id: '04', title: 'Audit Report Generation', spec: 'Detects empirical gaps and ungrounded claims with 98% precision in <2 minutes', type: 'output' },
+    ],
+    overview: 'Architected an end-to-end AI research review engine using FastAPI and LangGraph to automate full-paper reproducibility audits. Parses cross-section text and validates citation graphs to identify empirical gaps and ungrounded claims with 98% factual precision, cutting review turnaround from 3+ hours to under 2 minutes. Engineered a resilient multi-tier LLM routing gateway (LiteLLM, Gemini 3.5, Groq 120B) with automated prompt token-budget trimming, exponential backoff retries, and Redis prompt caching, achieving 99.9% pipeline availability across 20k+ token documents and reducing API latency and compute costs by 45%.',
+    designDecisions: [
+      'Multi-tier LLM routing gateway selecting optimal models based on document token length and latency constraints.',
+      'Automated token-budget trimming and Redis prompt caching, cutting API latency and compute costs by 45%.',
+    ],
+    failureModes: [
+      'Exponential backoff retries and graceful fallback routing across model providers during upstream rate limits.',
+    ],
+  },
+  {
+    slug: 'ai-workspace',
+    name: 'AI Workspace: AI Agent Platform',
+    sysId: 'SYS-AGENT-02',
+    type: 'Agentic Runtime & Vector RAG Platform',
+    category: 'AGENTIC AI',
+    status: 'DEPLOYED',
+    summary: 'AI agent backend engineered with FastAPI, PostgreSQL/pgvector, and Gemini, implementing RAG, persistent state, asynchronous processing, and an iterative streaming tool runtime.',
+    metric: 'Real-time Streaming // Iterative Tool-Calling Runtime',
+    metricLabel: 'AGENT PLATFORM RUNTIME',
+    stack: ['FastAPI', 'PostgreSQL', 'pgvector', 'Gemini', 'OpenTelemetry', 'Prometheus', 'Docker', 'Python'],
+    github: 'https://github.com/Saptarshi-Bandopadhyay',
+    stages: [
+      { id: '01', title: 'Provider-Agnostic LLM Layer', spec: 'Standardized abstraction supporting frontier model providers', type: 'input' },
+      { id: '02', title: 'Persistent State & Vector RAG', spec: 'PostgreSQL/pgvector session persistence and similarity retrieval', type: 'transformer' },
+      { id: '03', title: 'Iterative Tool Execution', spec: 'Sandboxed tool execution with streamed token responses', type: 'inference' },
+      { id: '04', title: 'OpenTelemetry Observability', spec: 'Distributed tracing and Prometheus inference latency metrics', type: 'output' },
+    ],
+    overview: 'Engineered an AI agent backend with FastAPI, PostgreSQL/pgvector, and Gemini, implementing RAG, persistent state, asynchronous processing, and provider-agnostic LLM abstractions. Built a custom tool-calling runtime supporting iterative execution and streaming, with OpenTelemetry tracing, Prometheus metrics, and Docker-based deployment.',
+    designDecisions: [
+      'Custom tool-calling runtime supporting multi-turn iterative execution and token streaming.',
+      'Asynchronous background processing paired with pgvector for fast contextual embedding lookups.',
+    ],
+    failureModes: [
+      'OpenTelemetry distributed tracing and structured Prometheus metrics to diagnose silent tool invocation failures.',
+    ],
+  },
+  {
     slug: 'snap-script',
     name: 'SnapScript: Image Captioning Engine',
-    sysId: 'SYS-CV-01',
+    sysId: 'SYS-CV-03',
     type: 'Vision-Language Transformer',
     category: 'COMPUTER VISION',
     status: 'DEPLOYED',
@@ -59,7 +113,7 @@ export const projects: Project[] = [
   {
     slug: 'cross-talk',
     name: 'CrossTalk: Neural Machine Translation',
-    sysId: 'SYS-NLP-02',
+    sysId: 'SYS-NLP-04',
     type: 'Sequence-to-Sequence Transformer',
     category: 'NLP & TRANSFORMERS',
     status: 'DEPLOYED',
@@ -87,7 +141,7 @@ export const projects: Project[] = [
   {
     slug: 'uno-viz',
     name: 'UnoViz: One-Shot Face Recognition',
-    sysId: 'SYS-CV-03',
+    sysId: 'SYS-CV-05',
     type: 'Siamese Metric Learning',
     category: 'DEEP LEARNING',
     status: 'RESEARCH SPEC',
@@ -114,7 +168,7 @@ export const projects: Project[] = [
   {
     slug: 'ivy-framework',
     name: 'Ivy Unified ML Framework Core',
-    sysId: 'SYS-OSS-04',
+    sysId: 'SYS-OSS-06',
     type: 'Runtime Architecture & Systems',
     category: 'OPEN SOURCE',
     status: 'VERIFIED PR',

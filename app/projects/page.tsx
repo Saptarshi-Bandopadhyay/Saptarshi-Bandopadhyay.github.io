@@ -7,6 +7,7 @@ import { sound } from '@/lib/sound'
 
 const CATEGORIES = [
   'ALL',
+  'AGENTIC AI',
   'COMPUTER VISION',
   'NLP & TRANSFORMERS',
   'DEEP LEARNING',
